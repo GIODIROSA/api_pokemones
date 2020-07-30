@@ -34,8 +34,8 @@ $.ajax({
                 <p class="card-title">Numero# ${el.pokedex}</p>
                 <p class="card-title">Nombre ${el.nombre.toUpperCase()}</p>
                 <p class="card-title">Mana ${el.mana.toUpperCase()}</p>
-                <button onclick= "statistics()" 
-                type="button" class="btn btn-primary" data-toggle="modal" data-target="graphiPoke">
+                <button onclick= "statistics(${el.ataque}, ${el.hp}, ${el.defensa}, ${el.velocidad})" 
+                type="button" class="btn btn-primary" data-toggle="modal" data-target="#graphiPoke">
         Ver Gráfica
         </button>
             </div>
