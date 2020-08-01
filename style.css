@@ -4,6 +4,7 @@ body{
     padding: 0px;
     box-sizing: border-box;
     height: 2000px;
+    font-family: 'Yanone Kaffeesatz', sans-serif;;
 }
 /* =======reset image==== */
 img{
@@ -22,9 +23,7 @@ img{
 }
 
 
-/* hero section */
-
-
+/* ==========hero section============ */
 .hero__section{
     height: 550px;
     width: 100%;
@@ -34,9 +33,13 @@ img{
     background-size: cover;
     background-attachment: fixed;
     
-    /* background: turquoise; */
 }
 
+
+/*============= configuracion de las cartas ============*/
+.cart__body:hover{
+    box-shadow: 1px 1px 1px #000000;
+}
 
 #cartas{
    width: 100vw;
@@ -51,27 +54,27 @@ img{
 .card-title01{
     font-size: 25px;
     font-weight: 900;
-    font-family: 'Yanone Kaffeesatz', sans-serif;;
+   
 }
 
 .titulo{
     font-size: 26px;
     font-weight: 400;
-    font-family: 'Yanone Kaffeesatz', sans-serif;
     color: red;
 
 }
 
+/* ==========configuracion del modal============= */
 .modal-content{
     width: 700px;
 }
 .modal-title{
-    font-family: 'Yanone Kaffeesatz', sans-serif;
     font-size: 26px;
 
 
 }
 
+/*======= configuracion del separador entre el mazo y el select===========0 */
 .ambiente__grafico{
     margin-right: 30px;
     width: 150px;
@@ -84,19 +87,13 @@ img{
     padding: 60px 0;
     color: white;
     font-weight: 300;
-    font-family: 'Yanone Kaffeesatz', sans-serif;;
+    
 }
 .separador__modificador{
     color: white;
     font-size: 20px;
     margin: 0px;
-}
-
-#poke-select{
-    margin: auto;
-    margin-top: 50px;
-    width: 250px;
-}
+}    
 
 .separador{
     margin: 50px 0;
@@ -108,3 +105,29 @@ img{
     align-items: center;
 }
 
+/*========== configuracion del select ===========*/
+
+#poke-select{
+    margin: auto;
+    margin-top: 50px;
+    width: 250px;
+}    
+
+/* configuracion del resultado del select */
+
+.newCuerpo{
+
+    margin: auto;
+}
+
+.newCuerpo .table{
+    width: 400px;
+    border: 2px solid gray;
+    color: gray;
+}
+.newCuerpo .imgpoke{
+    margin: 0 50px;
+
+
+}
+   

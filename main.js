@@ -65,11 +65,11 @@ $(".btn").css({
 
 
 
-//===la variable que carga un array del objeto extraido de success===
+//===array vacio que guarda lo generado por el ajax pokemazo===
 let pokemones = [];
 
 
-//=====carga de la data=======
+//=====carga de la data pokemazo=======
 function ejecutarAJAX(q){
 $.ajax({
     url: `https://pokeapi.co/api/v2/pokemon/${q}`,
@@ -91,11 +91,16 @@ $.ajax({
 
         //==== limpia la carga====
         $("#cuerpo").html("");
-    
+        // hacer un if
+        // pokemon.mana == 'fire ' ? $('body').css('background: red'): false
+        // pokemon.mana == 'fire ' ? $('body').css('background: red'): false
+        // pokemon.mana == 'fire ' ? $('body').css('background: red'): false
+        // pokemon.mana == 'fire ' ? $('body').css('background: red'): false
+        // pokemon.mana == 'fire ' ? $('body').css('background: red'): false
         //======template de las cards=====
         pokemones.forEach((el, i) => {
             $("#cuerpo").append(`
-        <div class="col-2 card m-3">
+        <div class="cart__body col-2 card m-3">
             <img src="${el.img}" class="card-img-top" alt="imagen">
             <img src="${el.img2}" class="card-img-top" alt="imagen">
             <div class="card-body">
@@ -130,50 +135,77 @@ $(document).on('keypress', e => {
 
 
 // === array de pokemones para el select=======
-let arrPoke= [];
-let number= 2; //esto tiene que tener el valor del select
+// let arrPoke= [];
+// let number= 3; //esto tiene que tener el valor del select
 
-//====tercer ajax para elaborar el select======
+// //====tercer ajax para elaborar el select======
 
-
-$.ajax({url: `https://pokeapi.co/api/v2/pokemon/${number}`, success: function(data){
-let datapoke= data;
-console.log(data);
-
-
-}});
-
-//ajax donde carga solo los name de los pokemones
-
-let arrName= [];
-
-$.ajax({url:"https://pokeapi.co/api/v2/pokemon/", success: function(dname) {
-let dataName = dname.results;
-dataName.forEach(n => {
-    arrName.push(n.name);
-})
-
-//verificando el array vacio que se le va ser el push
-console.log(arrName);
-//recorriendo el array
-for(let i= 0; i < arrName.length; i++){
-    let optionName= arrName[i];
-    //verificar que se imprime por consola los name string del array
-    console.log(optionName);
-    //cargar el select
-
- // $("#select_poke").append(`<option value=${parseInt(parseInt(i) + 1)}>${optionName[i]}</option>`);
+// $.ajax({url: `https://pokeapi.co/api/v2/pokemon/${number}`, success: function(data){
+// let datapoke= data;
+// console.log(data);
 
 
-//     var long = ArrayPeriodos.lenght();
+// }});
 
-// for(var i = 0; i <= long; i++){
-//   $("#cbmperiodo").append("<option value=""" + ArrayPeriodos[i] + """>" + ArrayPeriodos[i] + "</option>")
+// primera funcion select
+(function getTypes(){
+    
+$.ajax({url: `https://pokeapi.co/api/v2/type/`, success: function(data){
+    let types= data.results;
+    types.forEach(t => {
+       $('#select_poke').append(
+           `<option value="${t.name}">${t.name} </option>`
+       )
+    })
+    
+    }});
+})()
+// segunda funcion select
+function getPokeByTypes(type){
+    console.log(type)
+    $.ajax({url: `https://pokeapi.co/api/v2/type/${type}`, success: function(data){
+    let types= data.pokemon;
+  types.length = 10
+    types.forEach( p => {
+        console.log(p.pokemon.url)
+        $.ajax({url: p.pokemon.url, success: function(data){
+            // console.log(data.name)
+            // alert(data.stats[0].base_stat)
+            //se agrega el template
+            
+            $(".newCuerpo").append(`
+            
+            <table class="table">
+            <thead>
+            <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Ataque</th>
+            <th scope="col">Vida</th>
+            <th scope="col">defensa</th>
+            <th scope="col">Velocidad</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <th scope="row">${data.id}</th>
+            <td>${data.name}</td>
+            <td>${data.stats[1].base_stat}</td>
+            <td>${data.stats[0].base_stat}</td>
+            <td>${data.stats[2].base_stat}</td>
+            <td>${data.stats[5].base_stat}</td>
+            <img class="imgpoke" src="${data.sprites.front_default}" alt="front_image">
+            <img class="imgpoke" src="${data.sprites.back_default}" alt="back_image">
+
+            
+            `);
+
+
+            }});
+    } )
+    }});
 }
- 
-}
 
-} );
 
 
 //=============CARGA DEL BOTON DEL INPUT INICIAL===========
@@ -196,7 +228,7 @@ function probando(){
             exportEnabled: true,
             animationEnabled: true,
             title: {
-                text: "Desktop Browser Market Share in 2016"
+                text: "Habilidades del Pokemon"
             },
             data: [{
                 type: "pie",
