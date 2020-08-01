@@ -8,41 +8,60 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <!-- mystyle -->
     <link rel="stylesheet" href="style.css">
+    <!-- myfont -->
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;900&family=Yanone+Kaffeesatz:wght@300;400;700&display=swap" rel="stylesheet"> 
 </head>
 <body>
 
 
 
+<!--logo and text -->
+<nav class="navbar">
+  <a class="navbar-brand" href="#">
+    <img src="assets/img/logo.png" class="logo-pokebola d-inline-block align-top" alt="logo pokemon" loading="lazy">
+    <h1 class="name__game">PokeMazo</h1>
+  </a>
+</nav>
+
+<main>
+  <div class="hero__section">
+    <h1 class="title logo__container"><span class="title--modi">PokeMazo</span></h1>
+</div>
+</main>
+
+<!-- introducciones de search pokemones -->
+<div class="section__contenido">
+  <p id="parrafo">Instrucciones: <br> 1) Puedes solicitar la carta pokemon para que comiences armar tu mazo. <br> 2) Puedes desplegar varias cartas para comparar pokemones y de esa manera elegir tu estrategia. <br> 3) Cada carta de pokemon contiene sus datos, nombre y habilidades, ten en cuenta los puntos de defensa, velocidad y vidas. <br> 4) Las cartas contiene un boton "ver gráfica" donde se gráfica las habilidades de tu pokemon. <br> ¡...Eso es todo DISFRUTA, compara y arma tu mejor estrategia en PokeMazo...!</p>
+
+</div>
+
+
+<!-- ======== input y boton seleccionar el pokemon por name y id -->
 <div class="container">
-    <h1 class="logo__container"><span class="logo">PokeDex</span></h1>
     <div class="input-group">
-        <input type="text" class="form-control" placeholder="search pokemon" id="usuarioInput">
+        <input type="text" class="searchPoke form-control" placeholder="Introduce el numero del pokemon o su nombre" id="usuarioInput">
         <span class="input-group-btn">
-            <button class="btn btn-primary" onclick="buscarPoke()">Buscar Pokemon</button>
+            <button class="btn bg-warning text-light" onclick="buscarPoke()">Buscar Pokemon</button>
+
         </span>
     </div>  
 </div>
-
-<!-- 
-<table class="table">
-    <tbody id="cuerpo"></tbody>
-  </table> -->
 
 
 <div id="cartas" class="container">
     <div class="py-3 px-5">
 
-        <div id="cuerpo" class="row";"></div>
+        <div id="cuerpo" class="row";></div>
 
     </div>
 
 </div>
-<!-- modal -->
+<!-- modal de la grafica-->
 <div class="modal fade" id="graphiPoke" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Habilidades de Pokemon</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -52,14 +71,26 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
         </div>
       </div>
     </div>
   </div>
 
-  
 
+<div class="separador">
+  <img src="assets/img/logo.png" alt="ambiente grafico" class="ambiente__grafico">
+  <h1 class="separador__titulo">Visualiza las habilidades de los Pokemones <br> <span class="separador__modificador">Ataque, Defensa, Puntos de vida, velocidad </span></h1>
+ 
+</div>
+
+
+  <!-- selector option -->
+
+  <section class="mb-3 mb-sm-0" id="poke-select">
+    <select class="custom-select" id="select_poke">
+        <option value="0">Seleccione un Pokemon</option>
+    </select>
+</section>
 
 
 

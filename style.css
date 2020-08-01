@@ -1,9 +1,110 @@
+/* =========reset all ===========*/
+body{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    height: 2000px;
+}
+/* =======reset image==== */
+img{
+    max-width: 100%;
+    
+}
+
+/* ======navbar and logo===== */
+ .navbar{
+     background: tomato;
+ }
+.logo-pokebola{
+    width: 30px;
+    height: 30px;
+    
+}
+
+
+/* hero section */
+
+
+.hero__section{
+    height: 550px;
+    width: 100%;
+    background-image: url(assets/img/pokemon\ unidos.jpg);
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    
+    /* background: turquoise; */
+}
+
+
 #cartas{
    width: 100vw;
 
 }
-/* #cuerpo{
-    width: 650px;
-    
-} */
+
+.card-title{
+    text-align: left;
+    font-size: 16px;
+}
+
+.card-title01{
+    font-size: 25px;
+    font-weight: 900;
+    font-family: 'Yanone Kaffeesatz', sans-serif;;
+}
+
+.titulo{
+    font-size: 26px;
+    font-weight: 400;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    color: red;
+
+}
+
+.modal-content{
+    width: 700px;
+}
+.modal-title{
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 26px;
+
+
+}
+
+.ambiente__grafico{
+    margin-right: 30px;
+    width: 150px;
+    height: 150px;
+
+}
+
+.separador__titulo{
+    display: inline-block;
+    padding: 60px 0;
+    color: white;
+    font-weight: 300;
+    font-family: 'Yanone Kaffeesatz', sans-serif;;
+}
+.separador__modificador{
+    color: white;
+    font-size: 20px;
+    margin: 0px;
+}
+
+#poke-select{
+    margin: auto;
+    margin-top: 50px;
+    width: 250px;
+}
+
+.separador{
+    margin: 50px 0;
+    height: 250px;
+    background: tomato;
+    padding-left: 30px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
 
